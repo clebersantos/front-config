@@ -1,0 +1,404 @@
+//===============================================
+// Menu multisite
+//===============================================
+
+.main-header {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.admin-bar {
+    .menu-header-container {
+        top: 32px;
+    }
+}
+
+.multisite-toggle-container, .editorias-toggle-container {
+    @include breakpoint(medium down) {
+        height: 2.5rem;
+        position: fixed;
+        width: 100%;
+    }
+    .label-multisite, .label-editorias {
+        display: block;
+        font-size: $base-font-size;
+        line-height: 1rem;
+        margin: 0;
+        padding: 0.75rem 1rem;
+        position: relative;
+        text-align: center;
+        &:before {
+            font-size: 24px;
+            padding: 0.7rem 1rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        @include breakpoint(large) {
+            display: none;
+        }
+    }  
+    #show-multisite, #show-editorias {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        @include breakpoint(large) {
+            display: none;
+        }
+        & + label {
+            @include icon(before,navicon);
+        }
+        &:checked + label {
+            &:before {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}
+
+.multisite-toggle-container {
+    @include breakpoint(medium down) {
+        background: $dark-red;
+        top: 0;
+        z-index: 30;  
+    }
+    .label-multisite, .label-editorias {
+        color: $white;
+        &:before {
+            color: $white;
+        }
+    }
+    #show-multisite:checked ~ .menu-header-container {
+        display: flex;
+    }
+}
+
+.editorias-toggle-container {
+    @include breakpoint(medium down) {
+        background: $lighter-gray;
+        top: 2.5rem;
+        z-index: 20;  
+    }
+    .label-editorias {
+        color: $dark-gray;
+        &:before {
+            color: $dark-gray;
+        }
+    }
+    #show-editorias:checked ~ .menu-editorias-container {
+        display: flex;
+    }
+}
+
+.menu-header-container {
+    background: $dark-red;
+    display: none;
+    position: fixed;
+    top: 2.5rem;
+    width: 100%;
+    z-index: 10;
+    @include breakpoint(large) {
+        display: block;
+        height: 2.5rem;
+        top: 0;
+    }
+    .menu {
+        align-items: baseline; 
+        @include breakpoint(medium down) {
+            flex-direction: column;
+        }
+    }
+    .menu-item {
+        position: relative;
+        text-align: center;
+        @include breakpoint(medium down) {
+            width: 100%;
+        }
+        a {
+            color: $white;
+            display: block;
+            font-size: $base-font-size;
+            line-height: 1rem;
+            padding: 0.75rem 1.5rem;
+            transition: color 0.3s ease;
+        }
+        @include breakpoint(large) {
+            &.current-menu-item a:after {
+                @include css-triangle(0.5rem, $dark-red, down);
+                margin: 0 auto;
+                position: absolute;
+                top: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10
+            }
+        }
+        &.current-menu-item, &:hover, &:focus, &:active {
+            a {
+                color: rgba($white,0.65);
+                @include breakpoint(medium down) {
+                    color: $white;
+                }
+            }
+        }
+        @include breakpoint(large) {
+            &:hover, &:focus, &:active {
+                > .sub-menu { 
+                    display: block;
+                }
+            }
+        }
+    }
+    .sub-menu {
+        background-color: $darker-red;
+        position: absolute;
+        white-space: nowrap;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        @extend .no-bullet;
+        @include breakpoint(medium) {
+            margin: 0 1rem;                
+            margin: 0;
+        }
+        @include breakpoint(medium down) {
+            position: relative;
+            width: 100%;
+            // display: none;
+        }
+        .menu-item {
+            a {
+                padding: 0.75rem;
+                text-align: center;
+                &:hover {
+                    color: $white;
+                }
+                &:after {display: none}
+            }
+            & + .menu-item a {
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+
+//MOBILE BEHAVIOR
+#menu-multisite-header {
+    .menu-item-has-children {
+        @include breakpoint(medium down) {
+            & > a {
+                position: relative;
+                @include icon(before,angle-down);
+                &:before {
+                    color: #ffffff;
+                    position: absolute;
+                    right: 0;
+                    font-size: 24px;
+                    padding: 0.7rem 1rem;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                .sub-menu {
+                    display: block;
+                    overflow: hidden;
+                    max-height: 0;
+                    -webkit-transition: all 20000ms ease-in-out;
+                    -moz-transition: all 20000ms ease-in-out;
+                    -ms-transition: all 20000ms ease-in-out;
+                    -o-transition: all 20000ms ease-in-out;
+                    transition: all 20000ms ease-in-out;
+                }
+            }
+            &.is-active {
+                & > a { @include icon(before,angle-up); }
+                .sub-menu {
+                    display: block;
+                    overflow: hidden;
+                    border-top: 1px solid #5F1922;
+                    border-bottom: 1px solid #5F1922;
+                    max-height: 1000px;
+                }
+            }
+        }
+        @include breakpoint(large) {
+            .sub-menu li {
+                &:first-child {
+                    display: none;
+                }
+                &:nth-child(2) {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+//===============================================
+// Logo
+//===============================================
+
+.header-logo {
+    padding-top: 4rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    @include breakpoint(large) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    @include breakpoint(small down) {
+        .column:last-child {
+            padding: 0;
+        }
+    }
+    .social-links {
+        @include breakpoint(small down) {
+            display: flex;
+            justify-content: space-between;
+            margin: -3rem 0.9375rem 0 0;
+            li {
+                &:first-child {
+                    display: none;
+                }
+                &:nth-child(2) {
+                    margin-left: 0;
+                }
+                & + li {
+                    margin-left: 0.9rem;
+                }
+            }
+        }
+        @include breakpoint(medium only) {
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+//===============================================
+// Editorias
+//===============================================
+
+.menu-editorias-container {
+    background-color: $lighter-gray;
+    @include breakpoint(medium down) {
+        display: none;
+        position: fixed;
+        top: 5rem;
+        width: 100%;
+    }
+    .row {
+        position: relative;
+        @include breakpoint(medium down) {
+            width: 100%;
+        }
+        @include breakpoint(large) {
+            height: 2.5rem;
+            overflow: hidden;
+        }
+    }
+}
+
+.menu-editorias {
+    @include breakpoint(medium down) {
+        width: 100%;
+        ul {
+            flex-direction: column;
+        }
+        a {
+            display: block;
+            font-size: $base-font-size;
+            line-height: 1rem;
+        }
+    }
+    @include breakpoint(large) {
+        .menu-item {
+            a {
+                background-color: $white;
+                border-radius: 0.5rem;
+                color: $light-gray;
+                font-family: $subheader-font-family;
+                font-size: $small-font-size;
+                padding: 0.4rem 0.7rem;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                &:hover, &:focus, &:active {
+                    background-color: $medium-red;
+                    color: $white;
+                }
+
+            }
+            &.current-menu-item a{
+                background-color: $medium-red;
+                color: $white;
+            }
+            & + .menu-item {
+                margin-left: 1.5rem;
+            }
+        }
+    }
+}
+
+.search-container {
+    height: 2.5rem;
+    position: relative;
+    @include breakpoint(medium only) {
+        margin: 0;
+        width: 430px; 
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+    }
+    @include breakpoint(large) {
+        height: 0px;
+    }
+    .search-input {
+        background: $lighter-gray;
+        border: none;
+        border-radius: 0.5rem;        
+        box-shadow: none;
+        color: $dark-red;
+        height: 25px;
+        position: absolute;
+        bottom: 0px;
+        margin: 0;
+        z-index: 0;
+        padding: 0 0 0 10px;
+        width: calc(100% - 60px);
+        @include breakpoint(large) {
+            background-color: $white;
+            color: $dark-red;
+            text-align: right;
+            bottom: 8px;
+            padding: 0px;
+            width: 0px; 
+            transition: all .4s ease-in-out;
+        }
+    }
+
+    label[for="search-input-check"]{
+        line-height: 1.4;
+        position: absolute;
+        bottom: 0px;
+        right: 0.9375rem;
+        @include breakpoint(large) {
+            bottom: 7px;
+            right: 0px;
+        }
+    }
+
+    #search-input-check { display : none }
+    
+    @include breakpoint(large) {
+        #search-input-check:checked + .search-input { 
+            padding: 0 10px 0 0;
+            width: calc(100% - 50px);
+        }
+    }
+}
+
+.content-wrapper{
+    background-repeat-y: no-repeat;
+}

@@ -1,0 +1,36 @@
+.page-header {
+    margin: 1.5rem 0;
+    @include breakpoint(large) {
+        margin: 0 0 1.5rem 0;
+    }
+    .page-title {
+        color: $dark-gray;
+        font-family: $subheader-font-family;
+        font-size: 54px;
+        font-weight: 300;
+        position: relative;
+        text-transform: uppercase;
+        .line {
+            background-color: $lighter-gray;
+            height: 1px;
+            margin-left: -15px;
+            @include breakpoint(xlarge) {
+                margin-left: 0;
+                width: 100vw;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        margin: 0;
+        li {
+            list-style: none;
+            & + li {
+                margin-left: 30px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,6 @@
+.tmp/*
+node_modules/
+docker/db_data/
+npm-debug.log
+.DS_Store
+.idea

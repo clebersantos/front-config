@@ -1,0 +1,19 @@
+//===============================================
+// Reponsive video container
+//===============================================
+
+.video-player {
+    overflow: hidden;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 ratio */
+    width: 100%;
+    
+    iframe, object, embed {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+//===============================================
+// Search header button
+//===============================================
+
+.search-button {
+    @include icon(before, search);
+    &:before {
+        color: $medium-gray;
+        cursor: pointer;
+        display: block;
+        font-size: 20px;
+    }
+ }

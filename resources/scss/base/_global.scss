@@ -1,0 +1,145 @@
+//===============================================
+// Global's styles
+//===============================================
+
+@font-face {
+	font-family: 'Lucida Sans';
+	src: url('DEFINIR/resources/scss/base/lucida_sans_regular-webfont.woff2') format('woff2'),
+	url('DEFINIR/resources/scss/base/lucida_sans_regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$lucida-font-family: 'Lucida Sans', sans-serif;
+
+body {
+    font-family: $body-font-family;
+    margin: 0;
+}
+
+// Fix Foundation columns box-sizing
+.row .column {
+    box-sizing: border-box;
+}
+
+// Fix columns padding on mobile
+@include breakpoint(smaller only) {
+    .column {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+    }
+}
+
+.row.vertical {
+    flex-direction: column;
+}
+
+#app {
+    margin-top: 2.5rem;
+}
+
+.logo-fpa {
+    background-image: url('/wp-content/themes/perseuabramo/assets/img/logo-fpa.png');
+    display: inline-block;
+    height: 60px;
+    width: 196px;
+    span {
+        @include element-invisible;
+    }
+}
+
+.sidebar{
+    ul {
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        li {
+            &:before {
+                content: "";
+                border-color: transparent $medium-gray;
+                border-style: solid;
+                border-width: 0.35em 0 0.35em 0.45em;
+                display: block;
+                height: 0;
+                width: 0;
+                left: -1em;
+                top: 24px;
+                position: relative;
+            }
+
+            &.active{ 
+                & > a {
+                    color: $dark-red;
+                }
+                & > ul {
+                    display: block;
+                }
+            }
+
+            &:hover, &:focus, &:active {
+                &:before {
+                    border-color: transparent $dark-red;
+                }
+            }
+
+            & > ul {
+                display: none;
+            }
+
+            a {
+                color: $medium-gray;
+                font-size: 23px;
+                font-weight: 100;
+                padding: 10px;
+                text-transform: none !important;
+                &:hover, &:focus, &:active {
+                    color: $dark-red;
+                }
+            }
+        }
+    }
+}
+
+.right{ float: right }
+.left{ float: left }
+
+.align-flex-start{
+    justify-content: flex-start !important;
+}
+
+
+/*WP DEFAULT IMAGES*/
+
+img.size-full {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.main-header + .row > .column{
+    padding: 0px;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.btn-small{
+    background: #d41f29;
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .3s;
+
+    &.disabled { 
+        background: lightgray;
+        color: white;
+    }
+
+    &:not(.disabled):hover{
+        font-weight: bold;
+        color:white;
+    }
+}

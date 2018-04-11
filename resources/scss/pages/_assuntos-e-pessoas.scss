@@ -1,0 +1,54 @@
+.assuntos-e-pessoas{
+    .assuntos-e-pessoas--wrap {
+        width: 100%;
+        padding: 0 20px;
+    }
+    ul{
+        list-style-type: none;
+        width: 100%;
+        margin: 0 0 20px 0 !important;
+        
+        @include breakpoint(medium) {
+
+        }
+        @include breakpoint(large) {
+            justify-content: space-between;
+        }
+        
+        li{
+            color: #403F3C;
+            text-align: center;
+            font-size: 20px;
+            width: 8.3334%;
+            
+            @include breakpoint(small only) {
+                font-size: 26px;
+            }
+
+            @include breakpoint(medium only) {
+                width: 5.5556%;
+                font-size: 36px;
+            }
+
+            @include breakpoint(large) {
+                font-size: 40px;
+                width: auto;
+            }
+
+            a{ color: #403F3C; }
+        }
+
+        &.row li {
+            &.active a{
+                color: #C40024;
+            }
+        }
+    }
+
+    h2{
+        color: #C40024;
+        font-size: 40px;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+}

@@ -1,0 +1,94 @@
+//===============================================
+// Home
+//===============================================
+
+.home {
+    .btn-small.load-more{
+        display: none;
+    }
+
+    .main-footer {
+        @include breakpoint(medium) {
+            margin-top: 3rem;
+        }
+    }
+    .et_pb_row {
+        padding: 1.5px 0;
+        @include breakpoint(medium) {
+            border-top: 1px solid $lighter-gray;
+        }
+        @include breakpoint(large) {
+            padding: 3rem 0;
+        }
+        &:first-of-type {
+            border: 0;
+            padding: 0;
+            @include breakpoint(large) {
+                padding: 0 3rem;
+            }
+        }
+    }
+}
+
+.posts-row {
+    .et_pb_column {
+        @extend .smaller-12;
+        @extend .large-6;
+    }
+}
+
+.colunistas-row {
+    .et_pb_column_1_2 {
+        @extend .smaller-12;
+        @extend .large-6;
+    }
+    .et_pb_column_1_4 {
+        @extend .smaller-12;
+        @extend .medium-6;
+        @extend .large-3;
+    }
+}
+
+.highlight{
+    overflow: hidden;
+}
+
+.highlight-csbh.tv-fpa {
+    margin-top: -16px;
+}
+
+.highlight-csbh {
+
+    .info {
+        margin-bottom: 5px;
+    }
+    .perseu {
+        .category {
+            font-size: 16px;
+            color: #2a2426;
+        }
+        .post-list {
+            a {
+                padding-top: 3px;
+                padding-bottom: 3px;
+                &:hover {
+                    background: #DCDCDC;
+                }
+            }
+            .post-title {
+                line-height: 0em;
+                font-size: 14px;
+            }
+            .post-author {}
+        }
+    }
+}
+
+.highlight-formacaofpa {
+    .post-card {
+        .post-title {
+            font-weight: bold;
+        }
+    }
+}
+

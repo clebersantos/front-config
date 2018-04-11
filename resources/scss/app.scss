@@ -1,0 +1,92 @@
+//===============================================
+// Import Foundation's files
+//===============================================
+
+@import '_settings/settings';
+@import '_foundation/foundation';
+
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+// @include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+// @include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown;
+// @include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+// @include foundation-off-canvas;
+// @include foundation-orbit;
+@include foundation-pagination;
+// @include foundation-progress-bar;
+@include foundation-slider;
+// @include foundation-sticky;
+@include foundation-reveal;
+// @include foundation-switch;
+@include foundation-table;
+// @include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+//===============================================
+// Import project's files
+//===============================================
+
+//== Base styles
+@import 'base/global';
+@import 'base/helpers';
+
+//== Components styles
+@import 'components/buttons';
+@import 'components/divi';
+@import 'components/search';
+@import 'components/page-header';
+@import 'components/player';
+@import 'components/social-media';
+@import 'components/urgente';
+@import 'components/summary';
+@import 'components/divulgue';
+@import 'components/opinioes';
+@import 'components/mailchimp';
+
+//== NPM packages
+@import 'node_modules/flickity/css/flickity';
+
+//== Layout styles
+@import 'layout/header';
+@import 'layout/footer';
+
+//== Page styles
+@import 'pages/archive';
+@import 'pages/archive-event';
+@import 'pages/home';
+@import 'pages/page';
+@import 'pages/single-post';
+@import 'pages/assuntos-e-pessoas';
+@import 'pages/archive-tv-fpa';
+@import 'pages/single-tv-fpa';
+
+//== Vue components styles
+@import 'vue-components/_common';
+@import 'vue-components/multimidia';
+@import 'vue-components/_highlight-multimedia';
+@import 'vue-components/pesquisasfpa';
+@import 'vue-components/publicacoes';
+
+//== Atoms
+@import 'base/atoms';

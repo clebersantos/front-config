@@ -1,0 +1,41 @@
+.visual-form-builder {
+    ul {
+        margin: 0px;
+    }
+
+    .divulgue-title h3{
+        color: #948f8f;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 0;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .divulgue-subtitle h3{
+        font-size: 1.4rem;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .divulgue-description h3{
+        font-size: 14px;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .verification{
+        .vfb-item{
+            display: none;
+            &-submit{
+                display: block;
+            }
+        }
+    }
+
+    input[type=submit]{
+        @extend .btn-small;
+        border: none;
+        float: right;
+    }
+}

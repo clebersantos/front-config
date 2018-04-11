@@ -1,0 +1,8 @@
+.archive {
+    .post-card {
+        @extend .smaller-12;
+        @extend .small-12;
+        @extend .medium-6;
+        @extend .large-4;
+    }
+}

@@ -1,0 +1,216 @@
+//===============================================
+// Footer
+//===============================================
+
+.main-footer {
+	background: $lighter-gray;
+	margin-top: 50px;
+	
+	.et_pb_row {
+		padding: 30px 0;
+	}
+
+	.et_pb_column_1_4 {
+        @extend .smaller-12;
+        @extend .medium-12;
+        @extend .large-3;
+    }
+
+	& > .footer { padding: 30px 0px }
+
+	.footer-newsletter-social {
+		background-color: #88969F;
+		margin-bottom: 30px;
+		padding: 30px 0;
+
+		.btn-small{
+			font-family: $subheader-font-family !important;
+			display: inline-table;
+			text-transform: uppercase;
+			color: $medium-red;
+			background: $white;
+			padding: 6px 10px;
+			font-size: 13px;
+			border-radius: 8px;
+			@include icon(before, envelope);
+		}
+	}
+	.column {
+		@include breakpoint(medium) {
+			display: flex;
+			justify-content: space-between;
+		}
+		@include breakpoint(medium only) {
+			align-items: center;
+			& + .column {
+				margin-top: 2rem;
+			}
+		}
+		@include breakpoint(large) {
+			flex-direction: column;
+		}
+	}
+
+	.newsletter-container {
+		background-color: $medium-gray;
+		padding: 1.5rem 0;
+		@include breakpoint(small down) {
+			.column {
+				padding: 0;
+			}
+		}
+		@include breakpoint(medium) {
+			margin-bottom: 2rem;
+		}
+		.assine-newsletter {
+			background-color: $white;
+			@include icon(before,envelope);
+			@include breakpoint(small down) {
+				font-size: 11px;
+				&:before {
+					font-size: 14px;
+					vertical-align: baseline;
+				}
+			}
+		}
+		.column:first-child {
+			@include breakpoint(small down) {
+				text-align: center;
+				width: 100%;
+			}
+		}
+		.column + .column {
+			margin-top: 0;
+		}
+	}
+
+	.logo-fpa {
+		@include breakpoint(small down) {
+			display: block;
+			margin: 30px auto;
+		}
+		@include breakpoint(large) {
+			margin: 0 0 2rem;
+		}
+	}
+
+	.menu-container-fpa {
+		width: 100%;
+		@include breakpoint(small down) {
+			display: block;
+			margin: 30px auto;
+		}
+		@include breakpoint(medium only) {
+			width: calc(100% - 196px - 2rem);
+		}
+	}
+
+	.menu-container-multisite {
+		width: 100%;
+		@include breakpoint(small down) {
+			// display: none;
+		}
+	}
+
+	#menu-fpa {
+		@include breakpoint(small down) {
+			text-align: center;
+		}
+		@include breakpoint(medium) {
+			display: flex;
+		}
+		@include breakpoint(medium only) {
+			justify-content: space-between;
+			.menu-item {
+				margin: 0 1rem;
+				min-width: 4rem;
+				&:first-child {
+					margin-left: 0;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+		@include breakpoint(large) {
+			flex-direction: column;
+			padding-left: 4.8rem;
+		}
+	}
+
+	#menu-multisite {
+		@include breakpoint(small down) {
+			// display: block;
+			flex-direction: column;
+			text-align: center;
+			& > li > a {
+				display: block;
+			}
+		}
+		@include breakpoint(medium) {
+			align-items: flex-start;
+			justify-content: space-around;
+		}
+		> .menu-item {
+			@include breakpoint(small down) {
+				margin-bottom: 30px;
+			}
+			> a {
+				color: $dark-gray;
+				font-size: $base-font-size;
+				font-weight: bold;
+				padding: 0.25rem 0rem 0.5rem;
+				text-transform: uppercase;
+			}
+		}
+		.sub-menu {
+			@extend .no-bullet;
+		}
+	}
+
+	#menu-fpa,
+	#menu-multisite {
+		margin-bottom: 0;
+	}
+
+	#menu-fpa a,
+	#menu-multisite .sub-menu a {
+		@include link-underline($dark-gray,$dark-gray,$dark-gray);
+		display: inline-block;
+		font-size: $base-font-size;
+		line-height: 1.3;
+		padding: 0.25rem 0rem;
+		@include breakpoint(large) {
+			line-height: 1;
+		}
+	}
+}
+
+.menu-container-footer {
+	background: $medium-gray;
+	margin-top: 2rem;
+	min-height: 20px;
+	#menu-multisite-footer {
+		display: none;
+		@include breakpoint(large) {
+			display: flex;
+		}
+	}
+	.menu-item {
+		a {
+			color: $white;
+			display: block;
+			font-size: $base-font-size;
+			padding: 0.75rem 1.5rem;
+			transition: color 0.3s ease;
+		}
+		&.current-menu-item, &:hover, &:focus, &:active {
+			a {
+				color: $dark-gray;
+			}
+		}
+		.sub-menu {
+			display: none;
+		}
+	}
+}

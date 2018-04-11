@@ -1,0 +1,18 @@
+.small-btn {
+    border-radius: 5px;
+    color: $medium-red;
+    font-family: $subheader-font-family;
+    font-size: 12px;
+    padding: 6px 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    &:before {
+        font-size: 18px;
+        margin-right: 6px;
+        vertical-align: bottom;
+    }
+    &:active, &:focus, &:hover {
+        background-color: $medium-red !important;
+        color: $white;
+    }
+}

@@ -1,0 +1,88 @@
+//===============================================
+// Social links
+//===============================================
+
+.social-links {
+    margin-bottom: 0;
+    @extend .no-bullet;
+    li {
+        display: inline-block;
+        list-style: none;
+        vertical-align: middle;
+        & + li {
+            margin-left: 2rem;
+        }
+        &:first-child {
+            color: $light-gray;
+            font-family: $subheader-font-family;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        a {
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            &:active, &:focus {
+                color: $dark-red;
+            }
+            span {
+                @include element-invisible;
+            }
+        }
+        &.email a {
+            @include icon(before, envelope);
+        }
+        &.facebook a {
+            @include icon(before, facebook);
+        }
+        &.twitter a {
+            @include icon(before, twitter);
+        }
+        &.youtube a {
+            @include icon(before, youtube);
+        }
+    }
+}
+
+.main-header, .post-content {
+    .social-links {
+        li {
+            a {
+                color: $medium-red;
+                &:active, &:focus {
+                    color: $dark-red;
+                }
+            }
+        }
+    }
+}
+
+.main-footer {
+    .social-links {
+        margin-right: 10px;
+        li {
+            &:first-child {
+                display: none;
+            }
+            a {
+                color: $white;
+                &:active, &:focus, &:hover {
+                    color: $medium-red;
+                }
+            }
+        }
+        @include breakpoint(small down) {
+            li {
+                &:nth-child(2) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    @include breakpoint(small down) {
+        .newsletter-container {
+            .column:last-child {
+                margin: 15px auto 0 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.page{
+	h1.entry-title{
+		font-size: 40px;
+		font-weight: 100;
+		text-transform: uppercase;
+		border-bottom: 2px solid #f2ebec;
+		padding-bottom: 15px;
+    	margin-bottom: 25px;
+	}
+
+	h2.list-title{
+		font-size: 25px;
+		font-weight: 600;
+	}
+}
+
+.single, .page {
+    .tab-content {
+        a {
+            border-bottom: 1px solid transparent;
+            color: $dark-red;
+            transition: border 0.3s ease;
+            &:hover,&:active,&:focus {
+                border-bottom: 1px solid $dark-red;
+            }
+        }
+    }
+}
+
+.archive.editorias {
+	.column.no-p {
+		.post-card {
+			@extend .smaller-12;
+			@extend .medium-12;
+			@extend .large-6;
+			@extend .xlarge-4;
+		}
+	}
+}

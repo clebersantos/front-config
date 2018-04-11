@@ -1,0 +1,27 @@
+.urgente-wrapper {
+    background-color: $medium-red;
+    margin: 0 0 20px 0;
+    max-width: 100vw;
+    padding: 6px 0;
+    .urgente-highlight {
+        display: flex;
+        margin: 0 auto;
+        max-width: rem-calc(1220px);
+        @include icon(before,play); 
+        &:before {
+            color: $white;
+            margin-right: 10px;
+            padding-top: 2px;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        a {
+            @include link-underline($white,$white,$white)
+        }
+        strong {
+            text-transform: uppercase;
+        }
+    }
+}
